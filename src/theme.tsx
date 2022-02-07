@@ -16,6 +16,25 @@ const styles: Styles = {
     },
     form: { w: "100%", h: "100%", p: 0, m: 0 },
     html: {
+      ".wrapper": {
+        width: "100%",
+        ml: "auto",
+        mr: "auto",
+        p: 5,
+      },
+
+      ".size-lg": {
+        maxW: "1600px",
+      },
+      ".size-md": {
+        maxW: "800px",
+      },
+      ".size-sm": {
+        maxW: "400px",
+      },
+      ".size-auto": {
+        maxW: "fit-content",
+      },
       scrollBehavior: "smooth",
       ".date-picker-wrapper": {
         cursor: "pointer",
@@ -194,9 +213,44 @@ const theme = extendTheme({
   colors: {
     linkColor: { 100: "#0098ff" },
     errorColor: { 100: "#cc0000" },
+    mainColor: {
+      0: "rgb(180, 219, 81)",
+      10: "rgb(170, 207, 76)",
+      20: "rgb(161, 196, 73)",
+      30: "rgb(159, 194, 72)",
+      40: "rgb(153, 186, 71)",
+      50: "rgb(143, 173, 66)",
+      60: "rgb(124, 150, 57)",
+      70: "rgb(110, 133, 50)",
+      80: "rgb(93, 112, 43)",
+      90: "rgb(79, 94, 37)",
+      100: "rgb(69, 82, 32)",
+    },
   },
   margin: {
     base: { 1: "2%" },
+  },
+  components: {
+    Button: {
+      variants: {
+        save: {
+          bg: "mainColor.30",
+          _hover: { bg: "mainColor.60", _disabled: { bg: "mainColor.60" } },
+          _disabled: { bg: "mainColor.60" },
+
+          color: "whiteAlpha.900",
+          _focus: { borderColor: "inherit" },
+          mt: 1,
+        },
+        cancel: {
+          bg: "inherit",
+          color: "blackAlpha.700",
+          border: "none",
+          _focus: { boxShadow: "none" },
+          _hover: { color: "black", textDecor: "underline" },
+        },
+      },
+    },
   },
 
   fonts,

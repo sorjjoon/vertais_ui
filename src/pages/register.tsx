@@ -10,6 +10,7 @@ import { useRouter } from "next/router";
 import Head from "next/head";
 import PasswordInput from "../components/input/passwordinput";
 import { SignupSchema } from "../utils/validation";
+import SubmitCancel from "../components/input/submitcancel";
 
 interface registerProps {}
 const Register: React.FC<registerProps> = ({}) => {
@@ -81,9 +82,7 @@ const Register: React.FC<registerProps> = ({}) => {
                 <Checkboxinput name="isTeacher" label="Olen opettaja" />
               </Box>
               <Box>
-                <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
-                  Rekisteröidy
-                </Button>
+                <SubmitCancel submitLabel="Rekisteröidy" hideCancel isLoading={isSubmitting} />
               </Box>
             </VStack>
           </Form>

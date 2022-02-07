@@ -3,7 +3,7 @@ import { CombinedError } from "@urql/core";
 import React, { useEffect, useRef } from "react";
 import { formatGraphQLerror } from "../utils/utils";
 
-type ErrorMessageProps = React.ComponentProps<typeof Box> & { message?: string | CombinedError };
+type ErrorMessageProps = React.ComponentProps<typeof Box> & { message?: string | null | CombinedError };
 
 export const ErrorMessage: React.FC<ErrorMessageProps> = ({ children, className, message, ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -19,7 +19,7 @@ export const ErrorMessage: React.FC<ErrorMessageProps> = ({ children, className,
 
   return (
     <Box ref={ref} className={"error-message " + (className ?? "")} {...props}>
-      <Text> {formatGraphQLerror(message)} </Text>
+      <Text> {formatGraphQLerror(message ?? undefined)} </Text>
       {children}
     </Box>
   );

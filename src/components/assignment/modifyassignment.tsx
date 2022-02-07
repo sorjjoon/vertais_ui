@@ -332,7 +332,7 @@ export const ModifyAssignment: React.FC<ModifyAssignmentProps> = ({
                                     disabled={values.tasks.length <= 1}
                                     rightIcon={<CloseIcon />}
                                     size="xs"
-                                    colorScheme="red"
+                                    variant="save"
                                     title={
                                       values.tasks.length <= 1
                                         ? "Et voi poistaa ainoaa tehtävää"

@@ -18,7 +18,7 @@ const Index: React.FC<IndexProps> = ({ posts }) => {
   const currentPost = posts[currentPostIndex];
   const categories = uniq(posts.map((p) => p.meta.category));
   return (
-    <Wrap px={4} spacing={12} justify="center">
+    <Wrap px={4} spacing={12} justify="center" maxW="90%">
       <Head>
         <title>{currentPostIndex !== 0 ? ` ${currentPost.meta.title}` : "Vertais.fi"}</title>
       </Head>
@@ -41,6 +41,8 @@ const Index: React.FC<IndexProps> = ({ posts }) => {
                       <ListItem key={p.slug}>
                         <Button
                           variant="link"
+                          fontSize="0.9em"
+                          color="blackAlpha.800"
                           onClick={() => {
                             setCurrentPostIndex(j);
                             // router.push("/", { hash: posts[j].slug }, { shallow: true });

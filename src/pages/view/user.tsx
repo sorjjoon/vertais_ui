@@ -1,4 +1,4 @@
-import { Box, Heading, Button, Flex, Text } from "@chakra-ui/react";
+import { Box, Heading, Button, Flex, Text, VStack, Wrap } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Head from "next/head";
 import React, { useState } from "react";
@@ -13,6 +13,8 @@ import { useUpdateUserMutation } from "../../generated/graphql";
 
 import { createErrorMap, formatDate } from "../../utils/utils";
 import { PasswordSchema, UserInfoSchema } from "../../utils/validation";
+import ErrorMessage from "../../components/errormessage";
+import SubmitCancel from "../../components/input/submitcancel";
 
 export const User: React.FC = () => {
   const user = useCurrentUser();
@@ -32,183 +34,145 @@ export const User: React.FC = () => {
         <title>Käyttäjätiedot</title>
       </Head>
       <Wrapper size={null}>
-        <Flex
-          flexDir="row"
-          flexWrap="wrap"
-          justifyContent="center"
-          p={4}
-          sx={{
-            ">div": { mx: 4, minW: "max-content", w: "33%", maxW: "30em" },
-            " .container ": {
-              maxW: "25em",
-            },
-            " .container": {
-              p: 6,
-              m: 4,
-              w: "100%",
-              maxW: "max(25em, 33%)",
+        <VStack spacing={14}>
+          <Wrap spacing={14} justify="center" w="100%">
+            <Box>
+              <Formik
+                initialValues={{ ...user, email: user?.email || "" }}
+                validationSchema={UserInfoSchema}
+                onSubmit={async (values, props) => {
+                  setUserError(null);
+                  setUserStatus(null);
 
-              maxH: "max-content",
-              " >div": { my: 6, mx: 0 },
-              " >div:last-child": { my: 0, mx: 0 },
-            },
-            //Duplicate value, in case min max is not supported
+                  const res = await updateQuery(values);
+                  console.log(res);
+                  if (res.data?.updateUser?.errors) {
+                    console.log(res.data?.updateUser?.errors);
+                    props.setErrors(createErrorMap(res.data.updateUser.errors));
+                  } else if (res.error) {
+                    props.setErrors({
+                      username: "Olemme pahoillamme, mutta jokin meni pieleen: \n " + res.error.message,
+                    });
+                  } else {
+                    setUserStatus("Päivitetty");
+                  }
+                  props.setSubmitting(false);
+                }}
+              >
+                {({ isSubmitting, values, resetForm }) => (
+                  <Form>
+                    <VStack w="max-content" className="add-border" p={6} align="flex-start">
+                      <Heading mt={0} size={"md"}>
+                        Käyttäjätiedot
+                      </Heading>
+                      <Box w="100%">
+                        <TextInputfield
+                          name="username"
+                          placeholder="Käyttäjänimi"
+                          label="Käyttäjänimi"
+                          isRequired={true}
+                          value={values.username}
+                        />
 
-            " button": {
-              mb: 0,
-              mt: 0,
-              mr: "auto",
-            },
+                        <TextInputfield
+                          name="email"
+                          placeholder="Vapaaehtoinen"
+                          label="Sähköposti"
+                          isRequired={false}
+                          value={values.email}
+                        />
+                      </Box>
+                      <Box w="100%">
+                        <TextInputfield
+                          name="firstName"
+                          placeholder="Etunimi"
+                          label="Etunimi"
+                          isRequired={true}
+                          value={values.firstName}
+                        />
 
-            " .errorMessage": {
-              color: "red.600",
-              ml: "auto",
-              whiteSpace: "pre",
-            },
-            " .updatedAtContainer": {
-              w: "100%",
-              maxW: "100%",
-              display: "flex",
-              justifyContent: "center",
-              flexDir: "row",
-              mt: "3em",
-            },
-            " .updatedAt": {
-              fontSize: "sm",
-              p: 0,
-              m: 0,
-            },
-          }}
-        >
-          <Box>
-            <Formik
-              initialValues={{ ...user, email: user?.email || "" }}
-              validationSchema={UserInfoSchema}
-              onSubmit={async (values, props) => {
-                setUserError(null);
-                setUserStatus(null);
-
-                const res = await updateQuery(values);
-                console.log(res);
-                if (res.data?.updateUser?.errors) {
-                  console.log(res.data?.updateUser?.errors);
-                  props.setErrors(createErrorMap(res.data.updateUser.errors));
-                } else if (res.error) {
-                  props.setErrors({
-                    username: "Olemme pahoillamme, mutta jokin meni pieleen: \n " + res.error.message,
-                  });
-                } else {
-                  setUserStatus("Päivitetty");
-                }
-                props.setSubmitting(false);
-              }}
-            >
-              {({ isSubmitting, values }) => (
-                <Form>
-                  <Box w="max-content" className="add-border">
-                    <Heading mt={0} size={"md"}>
-                      Käyttäjätiedot
-                    </Heading>
-                    <Box>
-                      <TextInputfield
-                        name="username"
-                        placeholder="Käyttäjänimi"
-                        label="Käyttäjänimi"
-                        isRequired={true}
-                        value={values.username}
-                      />
-
-                      <TextInputfield
-                        name="email"
-                        placeholder="Vapaaehtoinen"
-                        label="Sähköposti"
-                        isRequired={false}
-                        value={values.email}
-                      />
-                    </Box>
-                    <Box>
-                      <TextInputfield
-                        name="firstName"
-                        placeholder="Etunimi"
-                        label="Etunimi"
-                        isRequired={true}
-                        value={values.firstName}
-                      />
-
-                      <TextInputfield
-                        name="lastName"
-                        placeholder="Sukunimi"
-                        label="Sukunimi"
-                        isRequired={true}
-                        value={values.lastName}
-                      />
-                    </Box>
-                    <Flex>
-                      <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
-                        Tallenna
-                      </Button>
-                      <Flex justify="center" align="center">
-                        {userStatus ? <StatusMessage>{userStatus}</StatusMessage> : null}
-                        {userError ? <Text className="errorMessage">{userError}</Text> : null}
+                        <TextInputfield
+                          name="lastName"
+                          placeholder="Sukunimi"
+                          label="Sukunimi"
+                          isRequired={true}
+                          value={values.lastName}
+                        />
+                      </Box>
+                      <Flex>
+                        <SubmitCancel
+                          isLoading={isSubmitting}
+                          wrapperStyling={{ w: "100%" }}
+                          showCheckMarkAfterSubmit={false}
+                          onCancel={() => {
+                            setUserStatus(null);
+                            resetForm();
+                          }}
+                        >
+                          {userStatus}
+                        </SubmitCancel>
+                        <ErrorMessage message={userError} />
                       </Flex>
-                    </Flex>
-                  </Box>
-                </Form>
-              )}
-            </Formik>
-          </Box>
-          <Box>
-            <Formik
-              initialValues={{ password2: "", password: "" }}
-              onSubmit={async (values, props) => {
-                setPswdError(null);
-                setPswdStatus(null);
-                const res = await updateQuery(values);
-                if (res.data?.updateUser?.errors) {
-                  console.log(res.data?.updateUser?.errors);
-                  props.setErrors(createErrorMap(res.data.updateUser.errors));
-                } else if (res.error) {
-                  props.setErrors({
-                    password: "Olemme pahoillamme, mutta jokin meni pieleen: \n " + res.error.message,
-                  });
-                }
+                    </VStack>
+                  </Form>
+                )}
+              </Formik>
+            </Box>
+            <Box>
+              <Formik
+                initialValues={{ password2: "", password: "" }}
+                onSubmit={async (values, props) => {
+                  setPswdError(null);
+                  setPswdStatus(null);
+                  const res = await updateQuery(values);
+                  if (res.data?.updateUser?.errors) {
+                    console.log(res.data?.updateUser?.errors);
+                    props.setErrors(createErrorMap(res.data.updateUser.errors));
+                  } else if (res.error) {
+                    props.setErrors({
+                      password: "Olemme pahoillamme, mutta jokin meni pieleen: \n " + res.error.message,
+                    });
+                  }
 
-                if (res.error) {
-                  setPswdError("Jokin meni pieleen, pahoittelumme: \n" + res.error.message);
-                } else if (res.data?.updateUser?.errors) {
-                  props.setErrors(createErrorMap(res.data?.updateUser?.errors));
-                } else {
-                  setPswdStatus("Päivitetty");
-                }
-                props.setSubmitting(false);
-              }}
-              validationSchema={PasswordSchema}
-            >
-              {({ isSubmitting, values }) => (
-                <Form>
-                  <Box className="add-border">
-                    <Heading size={"md"}>Salasana</Heading>
-                    <Box>
-                      <PasswordInput showPassword2 autoComplete="off" passwordLabel="Uusi salasana" />
+                  if (res.error) {
+                    setPswdError("Jokin meni pieleen, pahoittelumme: \n" + res.error.message);
+                  } else if (res.data?.updateUser?.errors) {
+                    props.setErrors(createErrorMap(res.data?.updateUser?.errors));
+                  } else {
+                    setPswdStatus("Päivitetty");
+                  }
+                  props.setSubmitting(false);
+                }}
+                validationSchema={PasswordSchema}
+              >
+                {({ isSubmitting, resetForm }) => (
+                  <Form>
+                    <Box className="add-border" p={6}>
+                      <Heading size={"md"}>Salasana</Heading>
+                      <Box w="100%">
+                        <PasswordInput showPassword2 autoComplete="off" passwordLabel="Uusi salasana" />
+                      </Box>
+                      <SubmitCancel
+                        isLoading={isSubmitting}
+                        wrapperStyling={{ w: "100%" }}
+                        showCheckMarkAfterSubmit={false}
+                        onCancel={() => {
+                          setPswdStatus(null);
+                          resetForm();
+                        }}
+                      >
+                        {pswdStatus}
+                      </SubmitCancel>
                     </Box>
-                    <Flex>
-                      <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
-                        Tallenna
-                      </Button>
-                      <Flex justify="center" align="center">
-                        {pswdStatus ? <StatusMessage>{userStatus}</StatusMessage> : null}
-                        {pswdError ? <Text className="errorMessage">{userError}</Text> : null}
-                      </Flex>
-                    </Flex>
-                  </Box>
-                </Form>
-              )}
-            </Formik>
-          </Box>
-          <Box className="updatedAtContainer">
+                  </Form>
+                )}
+              </Formik>
+            </Box>
+          </Wrap>
+          <Box className="updatedAtContainer" w="100%" maxW="100%" display="flex" justifyContent="center" flexDir="row">
             <Text className="updatedAt">Tietoja muokattu viimeksi: {formatDate(user?.updatedAt)}</Text>
           </Box>
-        </Flex>
+        </VStack>
       </Wrapper>
     </LoginRequired>
   );

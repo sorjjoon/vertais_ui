@@ -70,8 +70,8 @@ const ResetPassword: NextPage = () => {
                 />
               </Box>
               <Box>
-                <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
-                  Rekisteröidy
+                <Button type="submit" variant="save" isLoading={isSubmitting}>
+                  Tallenna
                 </Button>
               </Box>
             </VStack>

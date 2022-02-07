@@ -78,7 +78,7 @@ const Login: React.FC<loginProps> = ({}) => {
                 </Box>
               </Flex>
               <Box>
-                <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
+                <Button type="submit" variant="save" isLoading={isSubmitting}>
                   Kirjaudu sisään
                 </Button>
               </Box>

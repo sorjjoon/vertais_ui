@@ -61,19 +61,22 @@ export const Navbar: React.FC<navbarProps> = (props) => {
     );
   } else {
     rightLinks = (
-      <>
+      <Box bg="inherit">
         <Menu preventOverflow strategy="fixed">
           <MenuButton
             as={Button}
-            rightIcon={<ChevronDownIcon />}
             bg="inherit"
+            rightIcon={<ChevronDownIcon />}
             _focus={{
               boxShadow: "none",
+              bg: "inherit",
             }}
+            _active={{ bg: "inherit" }}
+            _hover={{ bg: "inherit", textDecoration: "underline" }}
           >
             Hei, {user.username}!
           </MenuButton>
-          <MenuList>
+          <MenuList color="blackAlpha.900">
             {user.role == UserRole.Teacher ? (
               <MenuItem onClick={onOpen}>
                 Luo uusi kurssi
@@ -94,7 +97,7 @@ export const Navbar: React.FC<navbarProps> = (props) => {
             </MenuItem>
           </MenuList>
         </Menu>
-      </>
+      </Box>
     );
   }
 
@@ -106,7 +109,8 @@ export const Navbar: React.FC<navbarProps> = (props) => {
       zIndex={1}
       position="sticky"
       id="nav"
-      bg="tomato"
+      bg="mainColor.30"
+      color="white"
       minH="4em"
       mb={8}
       py={4}
@@ -116,11 +120,11 @@ export const Navbar: React.FC<navbarProps> = (props) => {
       alignItems="center"
       justifyContent="center"
     >
-      <Box id="navLeft" ml="var(--base-margin)" overflow="visible">
+      <Box id="navLeft" ml="var(--base-margin)" overflow="visible" bg="inherit">
         {leftLinks}
       </Box>
       <Box flex={1}> </Box>
-      <Box id="navRight" mr="var(--base-margin)" overflow="visible">
+      <Box id="navRight" mr="var(--base-margin)" overflow="visible" bg="inherit">
         <Loading isLoading={user === undefined}>{rightLinks}</Loading>
       </Box>
     </Flex>

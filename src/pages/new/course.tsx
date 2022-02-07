@@ -70,7 +70,7 @@ const Course: React.FC<CourseProps> = ({}) => {
               </Box>
 
               <Box>
-                <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
+                <Button type="submit" variant="save" isLoading={isSubmitting}>
                   Luo kurssi
                 </Button>
               </Box>

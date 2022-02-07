@@ -67,7 +67,7 @@ const TeacherSummaryPanel: React.FC = ({}) => {
       });
       if (a.options.hasPeerAssesment) {
         row.set(
-          `${a.name} - vertaisarviointi`,
+          `${a.name} - vertaisarvioinnit`,
           countOccurances(
             (a.peerAssesment?.pairs ?? []).filter((p) => p.assessor.id === s.id),
             (p) => p.points != null

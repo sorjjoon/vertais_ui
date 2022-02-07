@@ -10,7 +10,7 @@ interface SubmitCancelProps {
   submitDisabled?: boolean;
   submitLabel?: string;
   cancelLabel?: string;
-
+  hideCancel?: boolean;
   isLoading: boolean;
   error?: string | CombinedError;
   cancelStyling?: React.ComponentProps<typeof Button>;
@@ -28,6 +28,7 @@ export const SubmitCancel: React.FC<SubmitCancelProps> = ({
   onSubmit,
   wrapperStyling,
   submitDisabled,
+  hideCancel = false,
   submitLabel = "Tallenna",
   cancelLabel = "Peruuta",
   showCheckMarkAfterSubmit = false,
@@ -39,7 +40,7 @@ export const SubmitCancel: React.FC<SubmitCancelProps> = ({
         onClick={onSubmit}
         type="submit"
         className="submit"
-        colorScheme="red"
+        variant="save"
         isLoading={isLoading}
         isDisabled={submitDisabled}
         {...submitProps}
@@ -47,14 +48,17 @@ export const SubmitCancel: React.FC<SubmitCancelProps> = ({
         {submitLabel}
       </Button>
       <Box className="filling">
-        <VStack ml={5} color="green">
+        <HStack ml={5} color="green" justifyContent={"flex-start"}>
           {showCheckMarkAfterSubmit ? <CheckIcon boxSize={5} /> : null}
           <>{children}</>
-        </VStack>
+        </HStack>
       </Box>
-      <Button className="cancel" {...cancelStyling} onClick={onCancel} disabled={isLoading}>
-        {cancelLabel}
-      </Button>
+      {!hideCancel ? (
+        <Button className="cancel" {...cancelStyling} onClick={onCancel} disabled={isLoading} variant="cancel">
+          {cancelLabel}
+        </Button>
+      ) : null}
+
       <ErrorMessage message={error} />
     </HStack>
   );

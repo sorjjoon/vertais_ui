@@ -9,6 +9,8 @@ categoryOrder: 0
 
 Vertaisarviointia on toteutettu onnistuneesti lukuisissa eri-ikäisissä opiskelijaryhmissä ala-asteikäisistä lähtien (_Topping 2009_).
 
+<img src="/images/shutterstock_1904756518.jpg" alt="Opettaja opettaa luokkaa">
+
 Näitä etuja ovat muun muassa:
 
 - Useat tutkimukset ovat havainneet parantuneita tai vähintään yhtä hyviä tuloksia opetuksessa, jossa vertaisarviointia toteutettiin (_Topping 2009_).
@@ -31,5 +33,3 @@ Näitä etuja ovat muun muassa:
 > Guo, Xiuyan (2017). Effect of Quality Characteristics of Peer Rater on the Reliability and Validity of Peer Assessment
 >
 > Tseng, Sheng-Chau ja Chin-Chung Tsai (2007). On-line peer assessment and the role of the peer feedback: A study of high school computer course
-
-<img src="/images/stock-photo-professor-assisting-college-student-with-laptop-in-classroom-during-computer-lesson-teacher-1904756518.jpg" alt="Opettaja opettaa luokkaa">
