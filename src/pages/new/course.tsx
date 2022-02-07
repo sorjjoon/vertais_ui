@@ -11,6 +11,7 @@ import Wrapper from "../../components/wrapper";
 import { useInsertCourseMutation } from "../../generated/graphql";
 import { createErrorMap, formatGraphQLerror, getRandom } from "../../utils/utils";
 import register from "../register";
+import ErrorMessage from "../../components/errormessage";
 
 interface CourseProps {}
 const Course: React.FC<CourseProps> = ({}) => {
@@ -74,11 +75,7 @@ const Course: React.FC<CourseProps> = ({}) => {
                   Luo kurssi
                 </Button>
               </Box>
-              {error ? (
-                <Box colorScheme="red" sx={{ fontSize: "sm", color: "red.300" }}>
-                  {error}
-                </Box>
-              ) : null}
+              <ErrorMessage message={error} />
             </VStack>
           </Form>
         )}

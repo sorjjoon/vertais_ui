@@ -46,7 +46,7 @@ export const ForgotPassword: React.FC<forgotPasswordProps> = ({}) => {
               </Box>
               {done ? <Box color="green.500">Linkki salasanan nollaamiseen on lähetetty sähköpostiisi</Box> : null}
               <Box>
-                <Button type="submit" colorScheme="red" isLoading={isSubmitting}>
+                <Button type="submit" variant="save" isLoading={isSubmitting}>
                   Nollaa salasana
                 </Button>
               </Box>

@@ -17,6 +17,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { CourseFragment, useInsertCourseMutation, useUpdateCourseMutation } from "../../generated/graphql";
 import { formatGraphQLerror, getRandom } from "../../utils/utils";
+import ErrorMessage from "../errormessage";
 import SubmitCancel from "../input/submitcancel";
 import TextInputfield from "../textinputfield";
 
@@ -90,11 +91,7 @@ export const CourseInfoModal: React.FC<CourseInfoModalProps> = ({ oldData, onClo
                 minH="5em"
               />
 
-              {error ? (
-                <Box colorScheme="red" sx={{ fontSize: "sm", color: "red.300" }}>
-                  {error}
-                </Box>
-              ) : null}
+              <ErrorMessage message={error} />
 
               <ModalFooter pb={0} px={0}>
                 <SubmitCancel wrapperStyling={{ w: "100%" }} isLoading={isSubmitting} onCancel={onClose} />

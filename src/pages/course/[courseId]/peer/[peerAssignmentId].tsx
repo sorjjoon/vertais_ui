@@ -167,7 +167,7 @@ export const Peer: React.FC<PeerProps> = () => {
                           return (
                             <Form>
                               <VStack align="flex-start">
-                                <FormControl name="description" id="descriptionId">
+                                <FormControl>
                                   <FormLabel htmlFor="description">Anna palautetta</FormLabel>
                                   <Abittieditor
                                     oldData={currentPair.description}
@@ -178,7 +178,7 @@ export const Peer: React.FC<PeerProps> = () => {
                                 </FormControl>
                                 <Field name="points">
                                   {({ field }: FieldProps) => (
-                                    <FormControl name="points" id="pointsId">
+                                    <FormControl>
                                       <FormLabel htmlFor="points">Pisteet</FormLabel>
                                       <Select
                                         name="points"

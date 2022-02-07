@@ -17,7 +17,6 @@ export class CsvWriter {
     const headKeys = this.headers.length ? this.headers : Array.from(this.rows[0].keys());
     const heading = headKeys.map((k) => this.stringifyData(k)).join(this.opts.delimiter);
     const data = this.rows.map((row) => {
-      console.log(row);
       return headKeys.map((key) => this.stringifyData(row.get(key))).join(this.opts.delimiter);
     });
     return heading + "\n" + data.join("\n");

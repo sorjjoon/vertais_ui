@@ -96,7 +96,6 @@ export const My: React.FC<MyPageProps> = () => {
       </Head>
       <Flex
         id="mainWrapper"
-        size={null}
         flexDir="row"
         justify={{ base: "center", sm: "center", md: "flex-start" }}
         wrap="wrap"
