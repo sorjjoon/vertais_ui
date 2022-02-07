@@ -1,0 +1,10 @@
+mutation InsertComment($content: String!, $course: Int, $grade: Int, $reveal: DateTime, $filesToLink: [Int!]) {
+  insertComment(
+    content: $content
+    reveal: $reveal
+    target: { course: $course, grade: $grade }
+    filesToLink: $filesToLink
+  ) {
+    ...Comment
+  }
+}

@@ -1,0 +1,36 @@
+query GetCourseSubmitDetails($id: Int!) {
+  getCourse(id: $id) {
+    id
+    assignments {
+      id
+      name
+      options {
+        ...AssignmentOptions
+      }
+      tasks {
+        id
+        points
+        number
+
+        mySubmit {
+          id
+          updatedAt
+          grade {
+            id
+            points
+          }
+        }
+      }
+      peerAssesment {
+        id
+        pairs {
+          id
+          points
+        }
+        options {
+          ...PeerAssesmentOptions
+        }
+      }
+    }
+  }
+}

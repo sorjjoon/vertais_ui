@@ -1,0 +1,7 @@
+fragment User on Account {
+  ...AccountDetails
+  username
+  createdAt
+  updatedAt
+  email
+}

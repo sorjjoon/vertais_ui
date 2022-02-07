@@ -1,0 +1,5 @@
+fragment AssignmentOptions on AssignmentOptions {
+  deadline
+  reveal
+  hasPeerAssesment
+}

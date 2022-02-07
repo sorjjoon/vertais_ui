@@ -1,0 +1,11 @@
+mutation InsertCourse($name: String!, $icon: String!, $abbreviation: String, $description: String) {
+  insertCourse(name: $name, icon: $icon, abbreviation: $abbreviation, description: $description) {
+    id
+    icon
+    createdAt
+    updatedAt
+    description
+    abbreviation
+    name
+  }
+}

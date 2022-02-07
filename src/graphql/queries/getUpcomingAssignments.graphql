@@ -1,0 +1,23 @@
+query GetUpcomingAssignments {
+  getUpcomingAssignments {
+    peerAssesments {
+      id
+      __typename
+      assignment {
+        id
+        name
+      }
+      options {
+        deadline
+      }
+    }
+    assignments {
+      __typename
+      id
+      name
+      options {
+        deadline
+      }
+    }
+  }
+}

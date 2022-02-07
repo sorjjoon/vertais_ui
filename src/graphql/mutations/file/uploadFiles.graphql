@@ -1,0 +1,6 @@
+mutation uploadFiles($files: [Upload!]!, $target: FileTarget) {
+  uploadFiles(files: $files, target: $target) {
+    id
+    filename
+  }
+}

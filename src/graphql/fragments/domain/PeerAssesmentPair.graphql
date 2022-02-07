@@ -1,0 +1,32 @@
+fragment PeerAssesmentPair on PeerAssesmentPair {
+  id
+  createdAt
+  updatedAt
+  points
+  description
+  assessor {
+    ...AccountDetails
+  }
+  assessedSubmits {
+    id
+    createdAt
+    updatedAt
+    description
+    owner {
+      id
+    }
+    task {
+      id
+      number
+    }
+    files {
+      ...File
+    }
+  }
+  feedbacks {
+    ...Feedback
+  }
+  comments {
+    ...Comment
+  }
+}

@@ -1,0 +1,5 @@
+query GetStudents($courseId: Int!) {
+  getStudents(courseId: $courseId) {
+    ...AccountDetails
+  }
+}

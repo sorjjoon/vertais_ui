@@ -1,0 +1,5 @@
+mutation UpdateFeedback($targetId: Int!, $childIndex: Int!, $description: String!) {
+  updateFeedback(targetId: $targetId, childIndex: $childIndex, description: $description) {
+    ...Feedback
+  }
+}

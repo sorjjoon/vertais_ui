@@ -1,0 +1,21 @@
+mutation Register(
+  $isTeacher: Boolean!
+  $username: String!
+  $password: String!
+  $firstName: String!
+  $lastName: String!
+  $email: String
+) {
+  register(
+    is_teacher: $isTeacher
+    credentials: { username: $username, password: $password, email: $email }
+    firstName: $firstName
+    lastName: $lastName
+  ) {
+    ...AccountResponse
+  }
+
+  generateDummyCourse {
+    ...Course
+  }
+}

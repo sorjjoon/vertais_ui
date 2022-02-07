@@ -1,0 +1,6 @@
+fragment AccountDetails on Account {
+  id
+  role
+  firstName
+  lastName
+}

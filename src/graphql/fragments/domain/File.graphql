@@ -1,0 +1,7 @@
+fragment File on FileDetails {
+  id
+  filename
+  createdAt
+  updatedAt
+  mimetype
+}

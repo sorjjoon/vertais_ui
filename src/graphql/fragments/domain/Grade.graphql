@@ -1,0 +1,17 @@
+fragment Grade on Grade {
+  id
+  createdAt
+  updatedAt
+  points
+  isRevealed
+  submitId
+  owner {
+    ...AccountDetails
+  }
+  comments {
+    ...Comment
+  }
+  feedbacks {
+    ...Feedback
+  }
+}

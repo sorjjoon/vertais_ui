@@ -1,0 +1,25 @@
+fragment Comment on Comment {
+  id
+  content
+  course {
+    id
+  }
+
+  reveal
+  createdAt
+  updatedAt
+  owner {
+    ...AccountDetails
+  }
+  files {
+    id
+    filename
+  }
+
+  grade {
+    id
+    comments {
+      id
+    }
+  }
+}

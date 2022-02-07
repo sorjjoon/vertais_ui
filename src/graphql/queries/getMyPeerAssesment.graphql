@@ -1,0 +1,5 @@
+query GetMyPeerAssesment($assignmentId: Int!) {
+  getMyPeerAssesment(id: $assignmentId) {
+    ...PeerAssesmentAssignment
+  }
+}

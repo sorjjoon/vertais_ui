@@ -1,0 +1,10 @@
+mutation updateGrade($submitId: Int!, $points: Float, $isRevealed: Boolean) {
+  updateGrade(submitId: $submitId, data: { points: $points, isRevealed: $isRevealed }) {
+    id
+    grade {
+      id
+      points
+      isRevealed
+    }
+  }
+}

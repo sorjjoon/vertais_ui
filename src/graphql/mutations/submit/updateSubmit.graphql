@@ -1,0 +1,8 @@
+mutation updateSubmit($data: Info!) {
+  updateSubmit(data: $data) {
+    id
+    mySubmit {
+      ...Submit
+    }
+  }
+}

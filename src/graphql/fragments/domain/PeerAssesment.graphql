@@ -1,0 +1,27 @@
+fragment PeerAssesmentAssignment on PeerAssesmentAssignment {
+  id
+  createdAt
+  updatedAt
+  pairs {
+    ...PeerAssesmentPair
+  }
+
+  options {
+    ...PeerAssesmentOptions
+  }
+  assignment {
+    id
+    createdAt
+    updatedAt
+    name
+    options {
+      deadline
+      hasPeerAssesment
+    }
+    tasks {
+      id
+      number
+      points
+    }
+  }
+}

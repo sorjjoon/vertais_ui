@@ -1,0 +1,6 @@
+input info {
+  description: String!
+  id: Int
+  filesToLink: [Int!]!
+  filesToDelete: [Int!]!
+}

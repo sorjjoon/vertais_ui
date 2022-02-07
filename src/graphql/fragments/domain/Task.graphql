@@ -1,0 +1,34 @@
+fragment Task on Task {
+  id
+  number
+  createdAt
+  updatedAt
+  description
+  points
+  files {
+    ...File
+  }
+  submits {
+    id
+    updatedAt
+    grade {
+      id
+      updatedAt
+      points
+    }
+    owner {
+      id
+    }
+  }
+  mySubmit {
+    id
+    updatedAt
+    grade {
+      id
+      updatedAt
+    }
+  }
+  answer {
+    ...Answer
+  }
+}

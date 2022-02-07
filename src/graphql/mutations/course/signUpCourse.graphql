@@ -1,0 +1,5 @@
+mutation SignUpCourse($code: String!) {
+  signUpCourse(code: $code) {
+    ...Course
+  }
+}

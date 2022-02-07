@@ -1,0 +1,14 @@
+fragment Feedback on Feedback {
+  id
+  description
+  createdAt
+  updatedAt
+  childIndex
+  grade {
+    id
+    submitId
+  }
+  peerAssesment {
+    id
+  }
+}

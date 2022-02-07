@@ -1,0 +1,8 @@
+mutation DeleteAssignment($id: Int!) {
+  deleteAssignment(id: $id) {
+    id
+    course {
+      id
+    }
+  }
+}

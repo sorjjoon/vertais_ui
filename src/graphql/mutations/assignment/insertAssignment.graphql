@@ -1,0 +1,26 @@
+mutation InsertAssignment(
+  $name: String!
+  $options: AssignmentOptionsInput!
+  $peerAssesmentOptions: PeerAssesmentOptionsInput!
+  $description: String!
+  $filesToLink: [Int!]!
+  $filesToDelete: [Int!]!
+  $tasks: [TaskInfo!]!
+  $courseId: Int!
+) {
+  insertAssignment(
+    tasks: $tasks
+    peerAssesmentOptions: $peerAssesmentOptions
+    description: $description
+    filesToLink: $filesToLink
+    filesToDelete: $filesToDelete
+    name: $name
+    courseId: $courseId
+    options: $options
+  ) {
+    id
+    assignments {
+      ...Assignment
+    }
+  }
+}

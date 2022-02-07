@@ -1,0 +1,8 @@
+mutation deleteSubmit($id: Int!) {
+  deleteSubmit(id: $id) {
+    id
+    mySubmit {
+      id
+    }
+  }
+}

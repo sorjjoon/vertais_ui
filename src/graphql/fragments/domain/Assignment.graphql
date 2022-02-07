@@ -1,0 +1,35 @@
+fragment Assignment on Assignment {
+  id
+  name
+  description
+
+  createdAt
+  updatedAt
+  files {
+    ...File
+  }
+  tasks {
+    ...Task
+  }
+  course {
+    id
+  }
+  deadline
+  reveal
+  options {
+    ...AssignmentOptions
+  }
+  peerAssesment {
+    id
+    pairs {
+      id
+      points
+      assessor {
+        id
+      }
+    }
+    options {
+      ...PeerAssesmentOptions
+    }
+  }
+}

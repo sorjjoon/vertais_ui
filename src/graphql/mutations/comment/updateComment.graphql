@@ -1,0 +1,5 @@
+mutation UpdateComment($id: Int!, $content: String, $reveal: DateTime, $filesToDelete: [Int!]) {
+  updateComment(id: $id, content: $content, reveal: $reveal, filesToDelete: $filesToDelete) {
+    ...Comment
+  }
+}

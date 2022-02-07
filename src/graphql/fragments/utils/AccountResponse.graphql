@@ -1,0 +1,8 @@
+fragment AccountResponse on AccountResponse {
+  errors {
+    ...FieldError
+  }
+  user {
+    ...User
+  }
+}

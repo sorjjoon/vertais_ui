@@ -1,0 +1,16 @@
+fragment Course on Course {
+  id
+  name
+  description
+  abbreviation
+  code
+  createdAt
+  updatedAt
+  icon
+  owner {
+    ...AccountDetails
+  }
+  comments {
+    ...Comment
+  }
+}

@@ -1,0 +1,11 @@
+mutation UpdateCourse($id: Int!, $description: String, $abbreviation: String, $name: String, $icon: String) {
+  updateCourse(id: $id, description: $description, abbreviation: $abbreviation, name: $name, icon: $icon) {
+    id
+    icon
+    createdAt
+    updatedAt
+    description
+    abbreviation
+    name
+  }
+}

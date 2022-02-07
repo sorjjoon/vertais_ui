@@ -1,0 +1,26 @@
+mutation UpdateAssignment(
+  $name: String!
+  $options: AssignmentOptionsInput!
+  $description: String!
+  $peerAssesmentOptions: PeerAssesmentOptionsInput!
+  $filesToLink: [Int!]!
+  $filesToDelete: [Int!]!
+  $tasks: [TaskInfo!]!
+  $id: Int!
+) {
+  updateAssignment(
+    tasks: $tasks
+    peerAssesmentOptions: $peerAssesmentOptions
+    description: $description
+    filesToLink: $filesToLink
+    filesToDelete: $filesToDelete
+    name: $name
+    id: $id
+    options: $options
+  ) {
+    id
+    assignments {
+      ...Assignment
+    }
+  }
+}

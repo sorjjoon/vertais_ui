@@ -1,0 +1,5 @@
+query myCourses($offset: Int, $limit: Int) {
+  getMyCourses(offset: $offset, limit: $limit) {
+    ...Course
+  }
+}

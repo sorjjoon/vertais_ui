@@ -1,0 +1,18 @@
+fragment Submit on Submit {
+  id
+  createdAt
+  updatedAt
+  description
+  owner {
+    ...AccountDetails
+  }
+  task {
+    id
+  }
+  files {
+    ...File
+  }
+  grade {
+    ...Grade
+  }
+}

@@ -1,0 +1,8 @@
+mutation UpdatePeerAssesment($pairId: Int!, $points: Int, $description: String) {
+  updatePeerAssesment(pairId: $pairId, points: $points, description: $description) {
+    id
+    points
+    updatedAt
+    description
+  }
+}

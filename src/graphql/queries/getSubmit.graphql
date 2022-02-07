@@ -1,0 +1,8 @@
+query GetSubmit($id: Int, $taskId: Int, $ownerId: Int) {
+  getSubmit(id: $id, taskId: $taskId, ownerId: $ownerId) {
+    id
+    mySubmit {
+      ...Submit
+    }
+  }
+}

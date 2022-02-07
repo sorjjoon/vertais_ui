@@ -1,0 +1,5 @@
+fragment PeerAssesmentOptions on PeerAssesmentOptions {
+  peerAssesmentCount
+  revealAutomatically
+  deadline
+}

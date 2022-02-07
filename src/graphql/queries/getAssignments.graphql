@@ -1,0 +1,8 @@
+query GetAssignments($courseId: Int!) {
+  getAssignments(courseId: $courseId) {
+    id
+    assignments {
+      ...Assignment
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.date {
+  font-size: 0.8em;
+}
+
+.date.updated-at {
+  color: gray;
+}
+
+.hide {
+  display: none !important;
+}
+
+.content.hidden {
+  color: gray;
+}
+.reveal-info {
+  font-size: 0.75em;
+  margin-top: 1em;
+}
+.date-postfix {
+  font-size: 0.8em;
+  align-self: center;
+}
+.reveal-info .date {
+  font-size: 1em;
+}
+.updated-at {
+  font-size: 0.9em;
+}
+
+/* .abitti-toolbar-container {
+  position: relative;
+}
+.abitti-toolbar-container > .rich-text-editor-tools {
+  position: absolute;
+}
+body > .rich-text-editor-tools {
+  display: none !important;
+} */

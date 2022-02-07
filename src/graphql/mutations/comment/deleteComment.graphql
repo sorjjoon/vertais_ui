@@ -1,0 +1,14 @@
+mutation DeleteComment($id: Int!) {
+  deleteComment(id: $id) {
+    id
+    owner {
+      id
+    }
+    course {
+      id
+    }
+    grade {
+      id
+    }
+  }
+}

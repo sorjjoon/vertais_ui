@@ -1,0 +1,21 @@
+query GetSubmits($taskId: Int!) {
+  getSubmits(taskId: $taskId) {
+    id
+    owner {
+      ...AccountDetails
+    }
+    grade {
+      id
+      owner {
+        ...AccountDetails
+      }
+      createdAt
+      updatedAt
+      points
+      isRevealed
+    }
+    task {
+      id
+    }
+  }
+}

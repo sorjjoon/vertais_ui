@@ -1,0 +1,11 @@
+mutation DeleteFeedback($id: Int!) {
+  deleteFeedback(id: $id) {
+    id
+    grade {
+      id
+    }
+    peerAssesment {
+      id
+    }
+  }
+}
