@@ -64,7 +64,6 @@ export const GradeSchemasa = Yup.object().shape({
       isRevealed: Yup.boolean(),
       points: Yup.number().when("isRevealed", {
         is: (val: any) => {
-          console.log(val);
           return !!val;
         },
         then: Yup.number().required("Pisteitä ei asetettu"),
