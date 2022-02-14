@@ -1,19 +1,5 @@
-import {
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter,
-  Box,
-  Button,
-  Heading,
-  VStack,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Modal, ModalOverlay, ModalContent, ModalCloseButton, ModalFooter } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { CourseFragment, useInsertCourseMutation, useUpdateCourseMutation } from "../../generated/graphql";
 import { formatGraphQLerror, getRandom } from "../../utils/utils";

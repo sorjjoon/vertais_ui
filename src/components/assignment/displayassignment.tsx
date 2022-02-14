@@ -3,44 +3,31 @@ import {
   Box,
   Button,
   Collapse,
-  Grid,
   Text,
   Heading,
-  Spinner,
   useDisclosure,
   VStack,
-  GridItem,
   Link,
   Flex,
   HStack,
   Divider,
 } from "@chakra-ui/react";
 
-import React, { Fragment, useEffect, useRef, useState } from "react";
-import sanitize from "sanitize-html";
+import React, { useEffect, useRef, useState } from "react";
 import {
   AssignmentFragment,
   CourseFragment,
-  TaskFragment,
   useDeleteAssignmentMutation,
   useGetStudentsQuery,
   UserRole,
 } from "../../generated/graphql";
 import { formatGraphQLerror, formatDate, assignmentHasActivePeerAssesment } from "../../utils/utils";
-import ModifyAssignment from "./modifyassignment";
-import FileList from "../file/filelist";
-import { ErrorMessage } from "../utils/errormessage";
 import SettingsButton from "../utils/settingsbutton";
 import { useCurrentUser } from "../providers/userprovider";
-import DisplayTask from "./displaytaskstudent";
 import TaskPreview from "./taskpreview";
-import { InfoIcon } from "@chakra-ui/icons";
-import { Status } from "../../utils/types";
 import MissingSubmitsIcon from "../utils/missingsubmitsicon";
 import Loading from "../utils/loading";
 import DisplayRichtext from "../utils/displayrichtext";
-import { useRouter } from "next/router";
-import { useCurrentCourse } from "../providers/courseprovider";
 
 interface displayassignmentProps {
   assignment: AssignmentFragment;

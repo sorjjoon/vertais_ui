@@ -1,19 +1,16 @@
-import { Divider, Box, Heading } from "@chakra-ui/layout";
-import { Button, Input, UnorderedList, VStack, Wrap, ListItem, Link } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/layout";
+import { Button, UnorderedList, Wrap, ListItem } from "@chakra-ui/react";
 import React, { useState } from "react";
 
 import { GetServerSideProps } from "next";
 import { Post, readAllSlugs, readSlug } from "../utils/posts-api";
 import { uniq, sortBy } from "lodash-es";
-import { useRouter } from "next/router";
 import Head from "next/head";
 
 interface IndexProps {
   posts: Post[];
 }
 const Index: React.FC<IndexProps> = ({ posts }) => {
-  const router = useRouter();
-
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
   const currentPost = posts[currentPostIndex];
   const categories = uniq(posts.map((p) => p.meta.category));

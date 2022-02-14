@@ -7,12 +7,8 @@ import {
   VStack,
   Link,
   FormControl,
-  FormHelperText,
   FormLabel,
-  Input,
   Select,
-  Textarea,
-  Text,
   HStack,
 } from "@chakra-ui/react";
 import { useRouter } from "next/router";
@@ -20,16 +16,11 @@ import NextLink from "next/link";
 import React, { useState } from "react";
 import CourseBanner from "../../../../components/course/coursebanner";
 import { useCurrentCourse } from "../../../../components/providers/courseprovider";
-import { useCurrentUser } from "../../../../components/providers/userprovider";
 import Loading from "../../../../components/utils/loading";
 import LoginRequired from "../../../../components/utils/loginrequired";
 import Wrapper from "../../../../components/wrapper";
 import FileList from "../../../../components/file/filelist";
-import {
-  SubmitFragment,
-  useGetMyPeerAssesmentQuery,
-  useUpdatePeerAssesmentMutation,
-} from "../../../../generated/graphql";
+import { useGetMyPeerAssesmentQuery, useUpdatePeerAssesmentMutation } from "../../../../generated/graphql";
 import { parseNumberDefaultIfNot, sum } from "../../../../utils/utils";
 import DisplayRichtext from "../../../../components/utils/displayrichtext";
 import { Field, FieldProps, Form, Formik } from "formik";
@@ -37,7 +28,6 @@ import { range } from "lodash-es";
 import SubmitCancel from "../../../../components/input/submitcancel";
 import { CombinedError } from "urql";
 import Abittieditor from "../../../../components/input/abittieditor";
-import TextFileInput from "../../../../components/input/textfileinput";
 
 interface PeerProps {}
 

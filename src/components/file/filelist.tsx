@@ -1,5 +1,5 @@
 import React from "react";
-import { List, Link, ListItem, ListIcon, OrderedList, UnorderedList, Box, Heading, HStack } from "@chakra-ui/react";
+import { Link, ListItem, UnorderedList, Box, Heading, HStack } from "@chakra-ui/react";
 import { abstractEqualityIncludes, getFileUrl } from "../../utils/utils";
 import { Field } from "formik";
 interface FileListProps {

@@ -1,6 +1,6 @@
-import { FormControl, FormLabel, Checkbox, FormErrorMessage, Stack, VStack, Flex, HStack } from "@chakra-ui/react";
+import { FormControl, FormLabel, Checkbox, FormErrorMessage, HStack } from "@chakra-ui/react";
 import { useField } from "formik";
-import React, { InputHTMLAttributes } from "react";
+import React from "react";
 
 type checkboxinputProps = React.ComponentProps<typeof Checkbox> & {
   name: string;

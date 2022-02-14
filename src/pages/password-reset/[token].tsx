@@ -38,7 +38,7 @@ const ResetPassword: NextPage = () => {
           return undefined;
         }}
       >
-        {({ isSubmitting, values }) => (
+        {({ isSubmitting }) => (
           <Form>
             <VStack
               spacing={3}

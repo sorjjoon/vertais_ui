@@ -4,13 +4,11 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 import React, { useState } from "react";
-import Checkboxinput from "../../components/input/checkboxinput";
 import LoginRequired from "../../components/utils/loginrequired";
 import TextInputfield from "../../components/textinputfield";
 import Wrapper from "../../components/wrapper";
 import { useInsertCourseMutation } from "../../generated/graphql";
-import { createErrorMap, formatGraphQLerror, getRandom } from "../../utils/utils";
-import register from "../register";
+import { formatGraphQLerror, getRandom } from "../../utils/utils";
 import ErrorMessage from "../../components/utils/errormessage";
 
 interface CourseProps {}

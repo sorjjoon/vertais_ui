@@ -1,4 +1,4 @@
-import { Box, Divider, Flex, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Box, Divider, Flex, Heading, VStack } from "@chakra-ui/react";
 import React from "react";
 import { useGetSubmitQuery } from "../../generated/graphql";
 import { formatGraphQLerror } from "../../utils/utils";

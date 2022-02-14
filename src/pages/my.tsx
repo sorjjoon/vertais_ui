@@ -1,18 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-  Flex,
-  Heading,
-  HStack,
-  Link,
-  ListItem,
-  StackDivider,
-  Text,
-  UnorderedList,
-  VStack,
-} from "@chakra-ui/react";
-import router from "next/router";
+import { Box, Button, Divider, Flex, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import {
   useGetUpcomingAssignmentsQuery,
@@ -22,20 +8,16 @@ import {
 } from "../generated/graphql";
 import { formatGraphQLerror } from "../utils/utils";
 import NextLink from "next/link";
-import Image from "next/image";
 import { useCurrentUser } from "../components/providers/userprovider";
 
 import LoginRequired from "../components/utils/loginrequired";
 import Head from "next/head";
-import Wrapper from "../components/wrapper";
 import { Form, Formik } from "formik";
 
-import { concat } from "lodash-es";
 import TextInputfield from "../components/textinputfield";
 import { CodeSchema } from "../utils/validation";
-import StatusMessage from "../components/statusmessage";
+import StatusMessage from "../components/utils/statusmessage";
 import Loading from "../components/utils/loading";
-import ErrorMessage from "../components/utils/errormessage";
 interface MyPageProps {}
 export const My: React.FC<MyPageProps> = () => {
   const [{ fetching, data, error }] = useMyCoursesQuery();

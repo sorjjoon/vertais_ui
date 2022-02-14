@@ -17,6 +17,7 @@ import { OperationResult } from "urql";
 import ErrorMessage from "../utils/errormessage";
 import FileInput from "../file/fileinput";
 import SubmitCancel from "../input/submitcancel";
+
 interface ModifyCommentProps {
   course?: { id: number };
   grade?: { id: number };
@@ -28,6 +29,7 @@ interface ModifyCommentProps {
   atferInsert?: (newValue: CommentFragment) => void;
   onCancel?: () => void;
 }
+
 const ModifyComment: React.FC<ModifyCommentProps> = ({
   course,
   grade,

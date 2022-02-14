@@ -1,6 +1,6 @@
 import { CheckIcon } from "@chakra-ui/icons";
-import { Box, Button, HStack, VStack } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Box, Button, HStack } from "@chakra-ui/react";
+import React from "react";
 import { CombinedError } from "urql";
 import ErrorMessage from "../utils/errormessage";
 

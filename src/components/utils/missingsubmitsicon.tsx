@@ -1,4 +1,4 @@
-import { CheckIcon, WarningIcon, WarningTwoIcon } from "@chakra-ui/icons";
+import { CheckIcon, WarningTwoIcon } from "@chakra-ui/icons";
 import { Icon, Tooltip } from "@chakra-ui/react";
 import React from "react";
 import { AssignmentFragment } from "../../generated/graphql";

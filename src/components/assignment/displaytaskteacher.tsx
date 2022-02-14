@@ -1,17 +1,9 @@
-import { Box, Link } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import {
-  AssignmentFragment,
-  TaskFragment,
-  useDeleteSubmitMutation,
-  useUpdateSubmitMutation,
-  useUploadFilesMutation,
-} from "../../generated/graphql";
+import React from "react";
+import { AssignmentFragment, TaskFragment } from "../../generated/graphql";
 import { parseDate } from "../../utils/utils";
 import { useCurrentCourse } from "../providers/courseprovider";
 import { useCurrentUser } from "../providers/userprovider";
-import NextLink from "next/link";
 import GradeTable from "./gradetable";
 import LoginRequired from "../utils/loginrequired";
 

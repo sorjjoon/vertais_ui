@@ -5,15 +5,14 @@ import {
   FormErrorMessage,
   FormHelperText,
   FormLabel,
-  Input,
   NumberDecrementStepper,
   NumberIncrementStepper,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
 } from "@chakra-ui/react";
-import { useField, Field, FieldAttributes } from "formik";
-import React, { InputHTMLAttributes } from "react";
+import { useField } from "formik";
+import React from "react";
 
 type NumberInputFieldProps = {
   name: string;

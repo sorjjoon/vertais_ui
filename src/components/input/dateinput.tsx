@@ -1,6 +1,5 @@
-import { Box, FormControl, FormErrorMessage, FormHelperText, FormLabel, Input, VStack } from "@chakra-ui/react";
+import { FormControl, FormErrorMessage, FormHelperText, FormLabel } from "@chakra-ui/react";
 import { Field, useField } from "formik";
-import { error } from "jquery";
 import React from "react";
 import ReactDatePicker from "react-datepicker";
 import { parseDate } from "../../utils/utils";

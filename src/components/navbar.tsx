@@ -1,28 +1,16 @@
-import { Box, Flex, Link, HStack, Button, Heading, Text, VStack, Spinner, useDisclosure } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { Box, Flex, Link, HStack, Button, Heading, Spinner, useDisclosure } from "@chakra-ui/react";
+import React from "react";
 import NextLink from "next/link";
-import { Account, useCurrentUserQuery, useLogoutMutation, UserRole } from "../generated/graphql";
-import {
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuIcon,
-  MenuCommand,
-  MenuDivider,
-} from "@chakra-ui/react";
+import { useLogoutMutation, UserRole } from "../generated/graphql";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import router from "next/router";
 import { useCurrentUser } from "./providers/userprovider";
 import { useClient } from "./providers/urqlclientprovider";
-import ErrorMessage from "./utils/errormessage";
 import Loading from "./utils/loading";
 import CourseInfoModal from "./course/courseinfomodal";
-interface navbarProps {}
-export const Navbar: React.FC<navbarProps> = (props) => {
+interface NavbarProps {}
+export const Navbar: React.FC<NavbarProps> = () => {
   const user = useCurrentUser();
 
   const [{ fetching: logoutFetching }, logout] = useLogoutMutation();

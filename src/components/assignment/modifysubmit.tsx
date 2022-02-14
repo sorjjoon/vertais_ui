@@ -1,7 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
-import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React from "react";
 import {
   AssignmentFragment,
   TaskFragment,
@@ -9,11 +8,10 @@ import {
   useUpdateSubmitMutation,
   useUploadFilesMutation,
 } from "../../generated/graphql";
-import { parseDate, uploadFiles } from "../../utils/utils";
+import { uploadFiles } from "../../utils/utils";
 import SubmitCancel from "../input/submitcancel";
 import TextFileInput from "../input/textfileinputlegacy";
 import Loading from "../utils/loading";
-import { useCurrentCourse } from "../providers/courseprovider";
 import { useCurrentUser } from "../providers/userprovider";
 
 interface ModifySubmitProps {

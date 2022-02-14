@@ -1,7 +1,7 @@
 import { FormLabel } from "@chakra-ui/form-control";
-import { HStack, Text } from "@chakra-ui/layout";
-import { ErrorMessage, Field, useField } from "formik";
-import React, { useEffect } from "react";
+import { Text } from "@chakra-ui/layout";
+import { ErrorMessage, useField } from "formik";
+import React from "react";
 import { uuid } from "../../utils/utils";
 import Abittieditor from "./abittieditor";
 import FileInput from "../file/fileinput";

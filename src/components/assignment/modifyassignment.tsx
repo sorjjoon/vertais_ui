@@ -1,42 +1,21 @@
-import {
-  Box,
-  Button,
-  FormLabel,
-  VStack,
-  Heading,
-  Divider,
-  NumberInput,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInputField,
-  NumberInputStepper,
-  Flex,
-} from "@chakra-ui/react";
+import { Box, Button, VStack, Heading, Divider, Flex } from "@chakra-ui/react";
 import { Formik, Form, FieldArray } from "formik";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   AssignmentFragment,
   FileFragment,
-  TaskFragment,
   useInsertAssignmentMutation,
   useUpdateAssignmentMutation,
   useUploadFilesMutation,
 } from "../../generated/graphql";
-import {
-  formatGraphQLerror,
-  getAllValues,
-  multiMap,
-  parseNumberDefaultIfNot,
-  uploadFiles,
-  uuid,
-} from "../../utils/utils";
+import { formatGraphQLerror, getAllValues, parseNumberDefaultIfNot, uploadFiles, uuid } from "../../utils/utils";
 import SubmitCancel from "../input/submitcancel";
 import TextInputfield from "../textinputfield";
 import ErrorMessage from "../utils/errormessage";
 import TextFileInput from "../input/textfileinput";
 import AssignmentOptionsInput from "../input/assignmentoptionsinput";
 import { AssignmentOptionsSchema } from "../../utils/validation";
-import { merge, forOwn, omitBy } from "lodash-es";
+import { merge, omitBy } from "lodash-es";
 import { CloseIcon, TriangleDownIcon, TriangleUpIcon } from "@chakra-ui/icons";
 import NumberInputfield from "../input/numberinput";
 

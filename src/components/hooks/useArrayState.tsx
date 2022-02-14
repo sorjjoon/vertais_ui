@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useCallback } from "react";
 
 export function useArrayState<T>(initialValue: T[], comparator = (a: T, b: T) => a === b) {
   const [arr, setArr] = React.useState(initialValue);

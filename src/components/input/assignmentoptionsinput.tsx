@@ -1,19 +1,6 @@
-import {
-  Box,
-  Collapse,
-  Divider,
-  Heading,
-  NumberDecrementStepper,
-  NumberIncrementStepper,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { Collapse, Divider, Heading, Text, VStack } from "@chakra-ui/react";
 import { useField } from "formik";
 import React from "react";
-import ReactDatePicker from "react-datepicker";
 import Checkboxinput from "./checkboxinput";
 import DateInput from "./dateinput";
 import NumberInputfield from "./numberinput";

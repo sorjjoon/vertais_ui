@@ -1,4 +1,4 @@
-import { VStack, Box, Heading, Flex, Link, Button } from "@chakra-ui/react";
+import { VStack, Box, Heading, Button } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Head from "next/head";
 import React, { useState } from "react";

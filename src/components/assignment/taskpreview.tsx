@@ -1,33 +1,11 @@
-import { Box, Text, Button, Divider, Heading, Link, Table, Tbody, Td, Th, Tr, VStack, Flex } from "@chakra-ui/react";
+import { Box, Divider, Heading, Link, VStack, Flex } from "@chakra-ui/react";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
-import {
-  AssignmentFragment,
-  TaskFragment,
-  useDeleteSubmitMutation,
-  UserRole,
-  useUpdateSubmitMutation,
-  useUploadFilesMutation,
-} from "../../generated/graphql";
+import React from "react";
+import { AssignmentFragment, TaskFragment, UserRole } from "../../generated/graphql";
 import NextLink from "next/link";
 import { useCurrentUser } from "../providers/userprovider";
-import { ErrorMessage, Formik, Form } from "formik";
-import sanitize from "sanitize-html";
-import {
-  parseDate,
-  formatDate,
-  confirmPromise,
-  uuid,
-  uploadFiles,
-  assignmentHasActivePeerAssesment,
-} from "../../utils/utils";
-import Displaycomment from "../comment/displaycomment";
-import Commentable from "../input/commentable";
-import SubmitCancel from "../input/submitcancel";
-import TextFileInput from "../input/textfileinputlegacy";
-import Loading from "../utils/loading";
+import { formatDate } from "../../utils/utils";
 import LoginRequired from "../utils/loginrequired";
-import { useCurrentCourse } from "../providers/courseprovider";
 
 import FileList from "../file/filelist";
 import DisplayRichtext from "../utils/displayrichtext";

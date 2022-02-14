@@ -1,25 +1,9 @@
-import { ChevronDownIcon, SettingsIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  HStack,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuDivider,
-  MenuItem,
-  MenuList,
-  Spinner,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
+import { SettingsIcon } from "@chakra-ui/icons";
+import { Box, Grid, GridItem, IconButton, Menu, MenuButton, MenuItem, MenuList, Spinner } from "@chakra-ui/react";
 import React, { useState } from "react";
-import { Comment, CommentFragment, useDeleteCommentMutation } from "../../generated/graphql";
+import { CommentFragment, useDeleteCommentMutation } from "../../generated/graphql";
 import { sanitize } from "../../utils/sanitize";
-import { compareDates, formatDate, formatGraphQLerror, uuid } from "../../utils/utils";
+import { compareDates, formatDate, formatGraphQLerror } from "../../utils/utils";
 import ErrorMessage from "../utils/errormessage";
 import FileList from "../file/filelist";
 import ModifyComment from "./modifycomment";

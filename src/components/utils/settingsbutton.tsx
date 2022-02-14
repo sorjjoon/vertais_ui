@@ -1,7 +1,6 @@
 import { SettingsIcon } from "@chakra-ui/icons";
 import { Menu, MenuButton, IconButton, MenuList, MenuItem, Spinner } from "@chakra-ui/react";
 import React from "react";
-import { formatGraphQLerror } from "../../utils/utils";
 
 type settingsbuttonProps = React.ComponentProps<typeof MenuButton> & {
   isUpdating?: boolean;

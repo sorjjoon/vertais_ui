@@ -9,8 +9,6 @@ import {
   UpdateUserMutation,
   GetCourseDocument,
   Comment,
-  GetAssignmentsDocument,
-  AssignmentFragment,
   MyCoursesQuery,
   MyCoursesDocument,
   SignUpCourseMutation,
@@ -21,20 +19,12 @@ import {
   FeedbackFragment,
   SubmitFragmentDoc,
   SubmitFragment,
-  AssignmentFragmentDoc,
-  FeedbackFragmentDoc,
-  PeerAssesmentAssignment,
-  PeerAssesmentPair,
   PeerAssesmentPairFragment,
   PeerAssesmentPairFragmentDoc,
-  UpdateSubmitMutation,
-  GetSubmitQuery,
-  GetSubmitDocument,
 } from "../../generated/graphql";
-import { coalesce, parseDate, parseNumberDefaultIfNot } from "../../utils/utils";
+import { parseDate } from "../../utils/utils";
 import { DocumentNode } from "graphql";
 import { DeepPartial } from "../../utils/types";
-import { sortBy } from "lodash-es";
 
 function typedUpdateQuery<Result, Query>(
   cache: Cache,

@@ -1,8 +1,6 @@
-import { Box, Input } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React from "react";
-import Head from "next/head";
 import { uuid } from "../../utils/utils";
-import { Field } from "formik";
 
 interface RichtextProps {
   id?: string;
