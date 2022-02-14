@@ -8,7 +8,7 @@ import {
 } from "../../../generated/graphql";
 import { CsvWriter } from "../../../utils/csv";
 import { countOccurances, entityKey, formatDate, uuid } from "../../../utils/utils";
-import ErrorMessage from "../../errormessage";
+import ErrorMessage from "../../utils/errormessage";
 import { useCurrentCourse } from "../../providers/courseprovider";
 import { useCurrentUser } from "../../providers/userprovider";
 import Loading from "../../utils/loading";

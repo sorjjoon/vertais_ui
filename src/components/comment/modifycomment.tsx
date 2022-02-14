@@ -14,7 +14,7 @@ import { formatGraphQLerror, uuid } from "../../utils/utils";
 import Abittieditor from "../input/abittieditor";
 import DatePicker from "react-datepicker";
 import { OperationResult } from "urql";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import FileInput from "../file/fileinput";
 import SubmitCancel from "../input/submitcancel";
 interface ModifyCommentProps {

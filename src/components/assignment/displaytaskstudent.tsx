@@ -20,7 +20,7 @@ import { confirmPromise, formatDate, parseDate, uploadFiles, uuid } from "../../
 import TextFileInput from "../input/textfileinputlegacy";
 import { Form, Formik } from "formik";
 import SubmitCancel from "../input/submitcancel";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 
 import { useCurrentCourse } from "../providers/courseprovider";
 import Loading from "../utils/loading";

@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { CourseFragment, useInsertCourseMutation, useUpdateCourseMutation } from "../../generated/graphql";
 import { formatGraphQLerror, getRandom } from "../../utils/utils";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import SubmitCancel from "../input/submitcancel";
 import TextInputfield from "../textinputfield";
 

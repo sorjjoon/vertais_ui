@@ -2,7 +2,7 @@ import { CheckIcon } from "@chakra-ui/icons";
 import { Box, Button, HStack, VStack } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { CombinedError } from "urql";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 
 interface SubmitCancelProps {
   onCancel?: () => void;

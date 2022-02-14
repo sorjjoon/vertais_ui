@@ -23,7 +23,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { formatGraphQLerror, parseNumberDefaultIfNot } from "../../utils/utils";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import Loading from "../utils/loading";
 import LoginRequired from "../utils/loginrequired";
 import { useCurrentCourse } from "../providers/courseprovider";

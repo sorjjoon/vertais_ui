@@ -1,7 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
 import { CombinedError } from "@urql/core";
 import React, { useEffect, useRef } from "react";
-import { formatGraphQLerror } from "../utils/utils";
+import { formatGraphQLerror } from "../../utils/utils";
 
 type ErrorMessageProps = React.ComponentProps<typeof Box> & { message?: string | null | CombinedError };
 

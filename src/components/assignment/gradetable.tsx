@@ -26,7 +26,7 @@ import {
 } from "../../generated/graphql";
 import { ensureValIsBetween, parseNumberDefaultIfNot } from "../../utils/utils";
 import { GradeSchema } from "../../utils/validation";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import SubmitCancel from "../input/submitcancel";
 import Loading from "../utils/loading";
 import { useCurrentUser } from "../providers/userprovider";

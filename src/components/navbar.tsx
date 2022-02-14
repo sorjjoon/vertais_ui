@@ -18,7 +18,7 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import router from "next/router";
 import { useCurrentUser } from "./providers/userprovider";
 import { useClient } from "./providers/urqlclientprovider";
-import ErrorMessage from "./errormessage";
+import ErrorMessage from "./utils/errormessage";
 import Loading from "./utils/loading";
 import CourseInfoModal from "./course/courseinfomodal";
 interface navbarProps {}

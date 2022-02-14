@@ -5,7 +5,7 @@ import { useGetAssignmentsQuery, UserRole } from "../../../generated/graphql";
 import { parseNumberDefaultIfNot } from "../../../utils/utils";
 import DisplayAssignment from "../../assignment/displayassignment";
 import ModifyAssignment from "../../assignment/modifyassignment";
-import ErrorMessage from "../../errormessage";
+import ErrorMessage from "../../utils/errormessage";
 import Loading from "../../utils/loading";
 import { useCurrentCourse } from "../../providers/courseprovider";
 import { useCurrentUser } from "../../providers/userprovider";

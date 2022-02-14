@@ -11,7 +11,7 @@ import Wrapper from "../../components/wrapper";
 import { useInsertCourseMutation } from "../../generated/graphql";
 import { createErrorMap, formatGraphQLerror, getRandom } from "../../utils/utils";
 import register from "../register";
-import ErrorMessage from "../../components/errormessage";
+import ErrorMessage from "../../components/utils/errormessage";
 
 interface CourseProps {}
 const Course: React.FC<CourseProps> = ({}) => {

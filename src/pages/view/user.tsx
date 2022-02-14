@@ -13,7 +13,7 @@ import { useUpdateUserMutation } from "../../generated/graphql";
 
 import { createErrorMap, formatDate } from "../../utils/utils";
 import { PasswordSchema, UserInfoSchema } from "../../utils/validation";
-import ErrorMessage from "../../components/errormessage";
+import ErrorMessage from "../../components/utils/errormessage";
 import SubmitCancel from "../../components/input/submitcancel";
 
 export const User: React.FC = () => {

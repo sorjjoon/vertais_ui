@@ -29,7 +29,7 @@ import {
 import { formatGraphQLerror, formatDate, assignmentHasActivePeerAssesment } from "../../utils/utils";
 import ModifyAssignment from "./modifyassignment";
 import FileList from "../file/filelist";
-import { ErrorMessage } from "../errormessage";
+import { ErrorMessage } from "../utils/errormessage";
 import SettingsButton from "../utils/settingsbutton";
 import { useCurrentUser } from "../providers/userprovider";
 import DisplayTask from "./displaytaskstudent";

@@ -32,7 +32,7 @@ import {
 } from "../../utils/utils";
 import SubmitCancel from "../input/submitcancel";
 import TextInputfield from "../textinputfield";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import TextFileInput from "../input/textfileinput";
 import AssignmentOptionsInput from "../input/assignmentoptionsinput";
 import { AssignmentOptionsSchema } from "../../utils/validation";

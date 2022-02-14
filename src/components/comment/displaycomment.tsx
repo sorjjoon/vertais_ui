@@ -20,7 +20,7 @@ import React, { useState } from "react";
 import { Comment, CommentFragment, useDeleteCommentMutation } from "../../generated/graphql";
 import { sanitize } from "../../utils/sanitize";
 import { compareDates, formatDate, formatGraphQLerror, uuid } from "../../utils/utils";
-import ErrorMessage from "../errormessage";
+import ErrorMessage from "../utils/errormessage";
 import FileList from "../file/filelist";
 import ModifyComment from "./modifycomment";
 

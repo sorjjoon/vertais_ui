@@ -35,7 +35,7 @@ import TextInputfield from "../components/textinputfield";
 import { CodeSchema } from "../utils/validation";
 import StatusMessage from "../components/statusmessage";
 import Loading from "../components/utils/loading";
-import ErrorMessage from "../components/errormessage";
+import ErrorMessage from "../components/utils/errormessage";
 interface MyPageProps {}
 export const My: React.FC<MyPageProps> = () => {
   const [{ fetching, data, error }] = useMyCoursesQuery();

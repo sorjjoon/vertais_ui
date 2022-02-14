@@ -1,5 +1,5 @@
 import { Table, Tbody, Tr, Th, Td, Box, Button } from "@chakra-ui/react";
-import { ErrorMessage } from "../errormessage";
+import { ErrorMessage } from "../utils/errormessage";
 import FileList from "../file/filelist";
 import React from "react";
 import { AssignmentFragment, TaskFragment, useDeleteSubmitMutation, useGetSubmitQuery } from "../../generated/graphql";
