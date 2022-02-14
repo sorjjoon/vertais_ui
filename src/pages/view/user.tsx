@@ -1,11 +1,10 @@
-import { Box, Heading, Button, Flex, Text, VStack, Wrap } from "@chakra-ui/react";
+import { Box, Heading, Flex, Text, VStack, Wrap } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import Head from "next/head";
 import React, { useState } from "react";
 import PasswordInput from "../../components/input/passwordinput";
 import { Loading } from "../../components/utils/loading";
 import LoginRequired from "../../components/utils/loginrequired";
-import StatusMessage from "../../components/statusmessage";
 import TextInputfield from "../../components/textinputfield";
 import { useCurrentUser } from "../../components/providers/userprovider";
 import Wrapper from "../../components/wrapper";
@@ -22,7 +21,6 @@ export const User: React.FC = () => {
   const [userError, setUserError] = useState<string | null>(null);
 
   const [pswdStatus, setPswdStatus] = useState<string | null>(null);
-  const [pswdError, setPswdError] = useState<string | null>(null);
   const [, updateQuery] = useUpdateUserMutation();
   if (user === undefined) {
     return <Loading />;
@@ -122,7 +120,6 @@ export const User: React.FC = () => {
               <Formik
                 initialValues={{ password2: "", password: "" }}
                 onSubmit={async (values, props) => {
-                  setPswdError(null);
                   setPswdStatus(null);
                   const res = await updateQuery(values);
                   if (res.data?.updateUser?.errors) {
@@ -135,7 +132,9 @@ export const User: React.FC = () => {
                   }
 
                   if (res.error) {
-                    setPswdError("Jokin meni pieleen, pahoittelumme: \n" + res.error.message);
+                    props.setErrors({
+                      password: "Olemme pahoillamme, mutta jokin meni pieleen: \n " + res.error.message,
+                    });
                   } else if (res.data?.updateUser?.errors) {
                     props.setErrors(createErrorMap(res.data?.updateUser?.errors));
                   } else {
